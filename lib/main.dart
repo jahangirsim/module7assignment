@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-int a = allProductList1[index].counter.add;
+//int a = allProductList1[index].counter.add;
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
