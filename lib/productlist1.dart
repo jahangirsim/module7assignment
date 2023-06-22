@@ -7,18 +7,20 @@ class ProductList1 extends StatefulWidget {
   State<ProductList1> createState() => _ProductList1State();
 }
 
-class AllProductList1{
+class AllProductList1 {
   final String name;
   final String price;
   final String images;
-  int counter;
+  int? counter;
 
   AllProductList1(
       this.name,
       this.price,
       this.images,
-      this.counter
-      );
+      this.counter);
+
+
+
 }
   List allProductList1 = [
     AllProductList1('Apple', 'BDT: 130/KG', 'images/apple.jpg', 0),
@@ -39,6 +41,17 @@ class AllProductList1{
     AllProductList1('Sugar', 'BDT: 72/KG', 'images/sugar.jpg', 0),
     AllProductList1('Wheel Powder', 'BDT: 75/KG', 'images/wheel.jpg', 0),
   ];
+
+//   sum() {
+//     for (int i=0; i<allProductList1.length; i++) {
+// var sum;
+//       sum+ = allProductList1[i].counter;
+//     }
+//   }
+
+
+//int sum = allProductList1[index].counter(0, (a, b) => a + b);
+
 
 class _ProductList1State extends State<ProductList1> {
   @override

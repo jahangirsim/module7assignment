@@ -1,4 +1,3 @@
-//import 'package:assignment_07/productlist.dart';
 import 'package:assignment_07/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment_07/productlist1.dart';
@@ -24,11 +23,12 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+
 }
 
-//int a = allProductList1[index].counter.add;
-
 class _MyHomePageState extends State<MyHomePage> {
+  int _itemCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,20 +47,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 trailing: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       height: 20,
                       child: Text(
                         '${allProductList1[index].counter}',
                         style: const TextStyle(fontSize: 10),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: 35,
                       child: ElevatedButton(
                         onPressed: () {
-                          allProductList1[index].counter = allProductList1[index].counter + 1;
                           setState(() {
-
+                           _itemCount = allProductList1[index].counter = allProductList1[index].counter + 1;
+                            //_itemCount++;
                           });
                           if (allProductList1[index].counter == 5) {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -81,7 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           }),
       floatingActionButton: FloatingActionButton(onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (c) => const MyCart()));
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (c) => MyCart(counter: _itemCount),),);
+        });
       },
       child: const Icon(Icons.shopping_cart),),
     );

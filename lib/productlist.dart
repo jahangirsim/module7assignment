@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ProductList extends StatefulWidget {
-  ProductList({Key? key}) : super(key: key);
+  const ProductList({Key? key}) : super(key: key);
 
   @override
   State<ProductList> createState() => _ProductListState();
